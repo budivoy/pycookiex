@@ -1,0 +1,14 @@
+{
+    "project_name": "Project Name",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+    "description": "Awessome Python package",
+    "author": "Anonymous",
+    "__prompts__": {
+        "project_name": "Human-readable project name",
+        "project_slug": "Python package name that will be used to INSTALL your package",
+        "package_name": "Python package name that will be used to IMPORT your package",
+        "description": "Description of your package",
+        "author": "Your name"
+    }
+}
