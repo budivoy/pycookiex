@@ -1,1 +1,1 @@
-"""This package contains unit and integration tests for the project."""
+"""This module contains unit and integration tests for the project."""

@@ -37,6 +37,13 @@ pydocstyle.convention = "google"
     "ARG",  # "Unused function argument". Fixtures are often unused.
 ]
 
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+
+[tool.ruff.format]
+# Prefer single quotes over double quotes.
+quote-style = "single"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
