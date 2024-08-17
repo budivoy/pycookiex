@@ -96,8 +96,16 @@ def test_bake_with_defaults_p(cookies: Cookies) -> None:
     assert "pyproject.toml" in found_toplevel_files
 
 
-def test_bake_and_install(cookies: Cookies) -> None:
+def test_bake_and_install_p(cookies: Cookies) -> None:
   """Test cookie bake and intall."""
   with bake_in_temp_dir(cookies) as result:
     assert result.project.isdir()
-    assert run_inside_dir("poetry install", str(result.project)) == 0
+    assert run_inside_dir("poetry install", result.project) == 0
+
+
+def test_bake_and_run_tests_p(cookies: Cookies) -> None:
+  """Test cookie bake and run tests."""
+  with bake_in_temp_dir(cookies) as result:
+    assert result.project.isdir()
+    assert run_inside_dir("poetry install", result.project) == 0
+    assert run_inside_dir("poetry run pytest", result.project) == 0
