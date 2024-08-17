@@ -107,5 +107,5 @@ def test_bake_and_run_tests_p(cookies: Cookies) -> None:
   """Test cookie bake and run tests."""
   with bake_in_temp_dir(cookies) as result:
     assert result.project.isdir()
-    assert run_inside_dir("poetry install", result.project) == 0
+    assert run_inside_dir("poetry install --with dev", result.project) == 0
     assert run_inside_dir("poetry run pytest", result.project) == 0
