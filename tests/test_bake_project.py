@@ -109,3 +109,19 @@ def test_bake_and_run_tests_p(cookies: Cookies) -> None:
     assert result.project.isdir()
     assert run_inside_dir('poetry install --with dev', result.project) == 0
     assert run_inside_dir('poetry run pytest', result.project) == 0
+
+
+def test_bake_and_run_lint_p(cookies: Cookies) -> None:
+  """Test cookie bake and run lint."""
+  with bake_in_temp_dir(cookies) as result:
+    assert result.project.isdir()
+    assert run_inside_dir('poetry install --with dev', result.project) == 0
+    assert run_inside_dir('poetry run ruff check', result.project) == 0
+
+
+def test_bake_and_run_format_p(cookies: Cookies) -> None:
+  """Test cookie bake and run format."""
+  with bake_in_temp_dir(cookies) as result:
+    assert result.project.isdir()
+    assert run_inside_dir('poetry install --with dev', result.project) == 0
+    assert run_inside_dir('poetry run ruff format', result.project) == 0
