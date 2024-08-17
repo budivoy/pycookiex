@@ -15,3 +15,13 @@ repos:
   rev: v3.29.0
   hooks:
     - id: commitizen
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.6.1
+  hooks:
+    # Run the linter.
+    - id: ruff
+      args: [ --fix, --config, pyproject.toml]
+    # Run the formatter.
+    - id: ruff-format
+      args: [ --config, pyproject.toml]
