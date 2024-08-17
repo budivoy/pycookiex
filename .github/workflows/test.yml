@@ -24,7 +24,6 @@ jobs:
           cache: 'poetry' # caching poetry dependencies
       - name: Install dependencies
         run: |
-          poetry lock
           poetry install
       - name: Run tests
         run: |
