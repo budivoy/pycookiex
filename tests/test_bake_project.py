@@ -125,3 +125,14 @@ def test_bake_and_run_format_p(cookies: Cookies) -> None:
     assert result.project.isdir()
     assert run_inside_dir('poetry install --with dev', result.project) == 0
     assert run_inside_dir('poetry run ruff format', result.project) == 0
+
+
+def test_bake_and_run_precommit_p(cookies: Cookies) -> None:
+  """Test cookie bake and run pre-commit."""
+  with bake_in_temp_dir(cookies) as result:
+    assert result.project.isdir()
+    assert run_inside_dir('poetry install --with dev', result.project) == 0
+    assert run_inside_dir('git init', result.project) == 0
+    assert run_inside_dir('git add .', result.project) == 0
+    assert run_inside_dir('poetry run pip install pre-commit', result.project) == 0
+    assert run_inside_dir('poetry run pre-commit run -a', result.project) == 0

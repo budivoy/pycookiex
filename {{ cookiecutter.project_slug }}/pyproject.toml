@@ -24,7 +24,6 @@ testpaths = ["tests/"]
 target-version = "py312"
 indent-width = 2
 line-length = 119
-exclude = ["*cookiecutter*"]
 
 [tool.ruff.lint]
 # By default, enable all the lint rules.
