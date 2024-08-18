@@ -15,6 +15,8 @@ ruff = "^0.6.1"
 rich = "^13.7.1"
 pytest-rich = "^0.1.1"
 attrs = "^24.2.0"
+mkdocs = "^1.6.0"
+mkdocs-material = "^9.5.31"
 
 [tool.pytest.ini_options]
 testpaths = ['tests/'] # Specify the directories to look for tests
