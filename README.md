@@ -5,6 +5,7 @@
 Yet another Python cookiecutter 🐍 🍪
 
 ## 🎯 Features
+- hooks: [pre-commit](https://pre-commit.com/)
 - testing: [pytest](https://docs.pytest.org/en/stable/)
 - linting: [ruff check](https://docs.astral.sh/ruff/linter/)
 - formatting: [ruff format](https://docs.astral.sh/ruff/formatter/)
