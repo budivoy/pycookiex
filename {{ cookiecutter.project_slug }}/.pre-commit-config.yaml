@@ -1,0 +1,35 @@
+default_stages: [pre-commit, pre-push, commit-msg]
+fail_fast: false
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: mixed-line-ending
+    args: ['--fix=auto']
+  - id: check-toml
+  - id: check-json
+
+# Check commit message
+- repo: https://github.com/commitizen-tools/commitizen
+  rev: v3.29.0
+  hooks:
+    - id: commitizen
+
+# Lint Python code
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.6.1
+  hooks:
+    # Run the linter.
+    - id: ruff
+      args: [ --fix, --config, pyproject.toml]
+    # Run the formatter.
+    - id: ruff-format
+      args: [ --config, pyproject.toml]
+
+# Lint GitHub Actions
+- repo: https://github.com/rhysd/actionlint
+  rev: v1.7.1
+  hooks:
+    - id: actionlint
