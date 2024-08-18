@@ -1,3 +1,6 @@
+[![🤗 Pre-Flight Checks](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml)
+[![✅ Tests](https://github.com/budivoy/pycookiex/actions/workflows/test.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/test.yml)
+
 # pycookiex
 Yet another Python cookiecutter 🐍 🍪
 
