@@ -12,17 +12,12 @@ python = "^3.12"
 pytest = "^8.3.2"
 pytest-cookies = "^0.7.0"
 ruff = "^0.6.1"
-rich = "^13.7.1"
-pytest-rich = "^0.1.1"
 attrs = "^24.2.0"
 mkdocs = "^1.6.0"
 mkdocs-material = "^9.5.31"
 
 [tool.pytest.ini_options]
 testpaths = ['tests/'] # Specify the directories to look for tests
-addopts = """\
-    --color=no --rich
-"""
 
 [tool.ruff]
 target-version = "py312"

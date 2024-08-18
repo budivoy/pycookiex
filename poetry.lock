@@ -636,21 +636,6 @@ cookiecutter = ">=2.1.0"
 pytest = ">=3.9.0"
 
 [[package]]
-name = "pytest-rich"
-version = "0.1.1"
-description = "Leverage rich for richer test session output"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pytest-rich-0.1.1.tar.gz", hash = "sha256:1630775e94d6900bafc83f284cf53c172e103e5b6872c8190177fb47c789a73c"},
-    {file = "pytest_rich-0.1.1-py3-none-any.whl", hash = "sha256:a9963fcbd904d1ea23e4c30726bba556e2c6b5d312f3aa55f3c68bff78f82986"},
-]
-
-[package.dependencies]
-pytest = ">=7.0"
-rich = "*"
-
-[[package]]
 name = "python-dateutil"
 version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
@@ -1011,4 +996,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "006a1abf5d122b49267af2bc42466ebc9f1053af9b221641c0d2ad95f9da21bb"
+content-hash = "bb665a7aba7176738815e1be75fb9e356b9c15b132f069a50ca9a1e177904409"
