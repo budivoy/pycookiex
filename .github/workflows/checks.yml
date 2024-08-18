@@ -1,4 +1,4 @@
-name: Pre-Flight Checks 🤗
+name: 🤗 Pre-Flight Checks
 
 on:
   pull_request:
@@ -7,27 +7,32 @@ on:
       - devel
 
 jobs:
-  linter:
+  linters:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.8.3
-          virtualenvs-create: true
-          virtualenvs-in-project: false
-      - name: Set up Python
-        uses: actions/setup-python@v5
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-env
         with:
           python-version: '3.12'
-          cache: 'poetry' # caching poetry dependencies
-      - name: Install dependencies
-        run: |
-          poetry install
+
       - name: Run ruff
         run: |
           poetry run ruff check
+
+  formatters:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-env
+        with:
+          python-version: '3.12'
+
       - name: Run format
         run: |
           poetry run ruff format
