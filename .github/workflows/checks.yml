@@ -36,3 +36,22 @@ jobs:
       - name: Run format
         run: |
           poetry run ruff format
+
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-env
+        with:
+          python-version: '3.12'
+
+      - name: Install pre-commit
+        run: |
+          pip install pre-commit
+
+      - name: Run pre-commit
+        run: |
+          poetry run pre-commit run -a
