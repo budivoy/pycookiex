@@ -33,3 +33,13 @@ repos:
   rev: v1.7.1
   hooks:
     - id: actionlint
+
+- repo: local
+  hooks:
+    - id: mypy
+      name: mypy
+      entry: poetry run mypy . --config pyproject.toml
+      require_serial: true
+      pass_filenames: false
+      language: system
+      types: [ python ]
