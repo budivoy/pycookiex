@@ -69,7 +69,7 @@ def run_inside_dir(command: str, dirpath: Path) -> int:
     return subprocess.check_call(shlex.split(command))  # noqa: S603
 
 
-def check_output_inside_dir(command: str, dirpath: Path) -> int:
+def check_output_inside_dir(command: str, dirpath: Path) -> bytes:
   """Run a command from inside a given directory, returning the command output.
 
   Args:
