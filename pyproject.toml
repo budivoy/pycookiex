@@ -15,6 +15,7 @@ ruff = "^0.6.1"
 attrs = "^24.2.0"
 mkdocs = "^1.6.0"
 mkdocs-material = "^9.5.31"
+mypy = "^1.11.1"
 
 [tool.pytest.ini_options]
 testpaths = ['tests/'] # Specify the directories to look for tests
@@ -46,6 +47,28 @@ inline-quotes = "single"
 [tool.ruff.format]
 # Prefer single quotes over double quotes.
 quote-style = "single"
+
+[tool.mypy]
+python_version = "3.12"
+plugins = []
+exclude = ["{{ cookiecutter.project_slug }}"]
+
+# Enforce strict type checking
+strict = true
+
+# Advanced mypy options for optimal type safety
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+
+# Handle third-party libraries
+ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core"]
