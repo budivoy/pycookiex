@@ -8,6 +8,7 @@ Yet another Python cookiecutter 🐍 🍪
 - hooks: [pre-commit](https://pre-commit.com/)
 - testing: [pytest](https://docs.pytest.org/en/stable/)
 - linting: [ruff check](https://docs.astral.sh/ruff/linter/)
+- typing: [mypy](https://mypy.readthedocs.io/en/stable/index.html)
 - formatting: [ruff format](https://docs.astral.sh/ruff/formatter/)
 - ci: [GitHub Actions](https://github.com/features/actions)
   * per each PR: checkers (linting, formatting, hooks), tests
