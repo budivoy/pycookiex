@@ -13,6 +13,10 @@ tasks:
     cmds:
       - poetry run ruff format --config pyproject.toml
 
+  checker:
+    cmds:
+      - poetry run mypy . --config pyproject.toml
+
   docs:
     cmds:
       - poetry run mkdocs build --strict --config-file docs/mkdocs.yml
