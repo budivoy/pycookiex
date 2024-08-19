@@ -1,0 +1,23 @@
+name: ✅ Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - devel
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-env
+        with:
+          python-version: '3.12'
+
+      - name: Run tests
+        run: |
+          poetry run pytest

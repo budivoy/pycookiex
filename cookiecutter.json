@@ -10,5 +10,8 @@
         "package_name": "Python package name that will be used to IMPORT your package",
         "description": "Description of your package",
         "author": "Your name"
-    }
+    },
+    "_copy_without_render": [
+        ".github/*"
+    ]
 }
