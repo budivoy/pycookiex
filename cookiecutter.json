@@ -4,6 +4,11 @@
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
     "description": "Awessome Python package",
     "author": "Anonymous",
+    "license": [
+        "MIT",
+        "Apache-2.0",
+        "GPL-3.0"
+    ],
     "__prompts__": {
         "project_name": "Human-readable project name",
         "project_slug": "Python package name that will be used to INSTALL your package",
