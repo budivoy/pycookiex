@@ -17,6 +17,7 @@ nav:
   - Intruduction: README.md
   - Other:
     - License: LICENSE.md
+    - Changelog: CHANGELOG.md
 
 markdown_extensions:
   - pymdownx.snippets:
@@ -29,3 +30,4 @@ extra:
   md_file_to_update_links:
     - README.md
     - LICENSE.md
+    - CHANGELOG.md

@@ -1,5 +1,6 @@
 [![🤗 Pre-Flight Checks](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml)
 [![✅ Tests](https://github.com/budivoy/pycookiex/actions/workflows/test.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/test.yml)
+[![Changelog](https://img.shields.io/badge/changelog-available-orange.svg)](./CHANGELOG.md)
 
 # pycookiex
 Yet another Python cookiecutter 🐍 🍪
@@ -11,7 +12,7 @@ Yet another Python cookiecutter 🐍 🍪
 - typing: [mypy](https://mypy.readthedocs.io/en/stable/index.html)
 - formatting: [ruff format](https://docs.astral.sh/ruff/formatter/)
 - ci: [GitHub Actions](https://github.com/features/actions)
-  * per each PR: checkers (linting, formatting, hooks), tests
+  * per each PR: checkers (linting, formatting, hooks, docs build), tests
 
 ## 🚀 Getting Started
 ### 📋 Prerequisites
