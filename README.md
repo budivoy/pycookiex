@@ -6,6 +6,8 @@
 Yet another Python cookiecutter 🐍 🍪
 
 ## 🎯 Features
+- structured project:
+  * license: MIT, Apache-2.0, GPL, ...
 - hooks: [pre-commit](https://pre-commit.com/)
 - testing: [pytest](https://docs.pytest.org/en/stable/)
 - linting: [ruff check](https://docs.astral.sh/ruff/linter/)
