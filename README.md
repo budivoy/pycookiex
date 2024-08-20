@@ -28,7 +28,7 @@ cookiecutter https://github.com/budivoy/pycookiex
 This will prompt you to fill out a few details about your new Python package, then set up everything automatically.
 
 ## 📜 License
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE.md) file for details.
 
 ## 📬 Contact
 Created by [budivoy](https://budivoy.github.io/) - feel free to reach out!

@@ -14,8 +14,18 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Intruduction: index.md
+  - Intruduction: README.md
+  - Other:
+    - License: LICENSE.md
 
 markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
+
+hooks:
+  - hooks.py
+
+extra:
+  md_file_to_update_links:
+    - README.md
+    - LICENSE.md
