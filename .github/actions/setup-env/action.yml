@@ -18,7 +18,8 @@ runs:
         cache: 'poetry' # caching poetry dependencies
 
     - name: Install dependencies
-      run: poetry install
+      run: |
+        poetry install
       shell: bash  # Adding the shell property
 
 inputs:

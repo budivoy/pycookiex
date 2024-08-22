@@ -16,6 +16,7 @@ attrs = "^24.2.0"
 mkdocs = "^1.6.0"
 mkdocs-material = "^9.5.31"
 mypy = "^1.11.1"
+mkdocstrings = { version = "^0.25.2", extras = ["python"] }
 
 [tool.pytest.ini_options]
 testpaths = ['tests/'] # Specify the directories to look for tests

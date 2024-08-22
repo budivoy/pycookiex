@@ -15,6 +15,8 @@ theme:
 
 nav:
   - Intruduction: README.md
+  - Examples:
+    - Docstring Example: examples/docstring_example.md
   - Other:
     - License: LICENSE.md
     - Changelog: CHANGELOG.md
@@ -31,3 +33,15 @@ extra:
     - README.md
     - LICENSE.md
     - CHANGELOG.md
+
+plugins:
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_signature_annotations: true
+            show_source: true
+            show_submodules: true
