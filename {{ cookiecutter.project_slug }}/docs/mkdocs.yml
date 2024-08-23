@@ -1,0 +1,60 @@
+site_name: ${{ cookiecutter.project_slug }}
+repo_url: https://github.com/${{ cookiecutter.github_user }}/${{ cookiecutter.project_slug }}
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+nav:
+  - Intruduction: README.md
+  - Other:
+    - License: LICENSE.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+
+hooks:
+  - hooks.py
+
+extra:
+  md_file_to_update_links:
+    - README.md
+    - LICENSE.md
+
+plugins:
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [..]
+          import:
+            - https://docs.python.org/3/objects.inv
+          options:
+            # For more options see: https://mkdocstrings.github.io/python/usage/
+            docstring_style: google
+            show_signature_annotations: true
+            show_source: true
+            show_submodules: true
+            signature_crossrefs: true
+            show_symbol_type_toc: true
+            separate_signature: false
