@@ -16,5 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - linting: [ruff check](https://docs.astral.sh/ruff/linter/)
 - typing: [mypy](https://mypy.readthedocs.io/en/stable/index.html)
 - formatting: [ruff format](https://docs.astral.sh/ruff/formatter/)
+- documentation: [mkdocs](https://www.mkdocs.org/), [mkdocs-material](https://squidfunk.github.io/mkdocs-material/), [mkdocstrings](https://mkdocstrings.github.io/)
 - ci: [GitHub Actions](https://github.com/features/actions)
   * per each PR: checkers (linting, formatting, hooks, docs build), tests
