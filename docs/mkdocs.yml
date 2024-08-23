@@ -54,7 +54,11 @@ plugins:
           import:
             - https://docs.python.org/3/objects.inv
           options:
+            # For more options see: https://mkdocstrings.github.io/python/usage/
             docstring_style: google
             show_signature_annotations: true
             show_source: true
             show_submodules: true
+            signature_crossrefs: true
+            show_symbol_type_toc: true
+            separate_signature: false
