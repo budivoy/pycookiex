@@ -3,6 +3,8 @@ repo_url: https://github.com/budivoy/pycookiex
 
 theme:
   name: material
+  features:
+    - content.code.copy
   palette:
     - scheme: default
       toggle:
@@ -22,8 +24,16 @@ nav:
     - Changelog: CHANGELOG.md
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       check_paths: true
+  - pymdownx.superfences
 
 hooks:
   - hooks.py
