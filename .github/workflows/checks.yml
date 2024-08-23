@@ -97,6 +97,4 @@ jobs:
 
       - name: Build docs
         run: |
-          PYTHONPATH=$PYTHONPATH:$(pwd)/examples
-          export PYTHONPATH
           poetry run mkdocs build -f --strict --config-file docs/mkdocs.yml

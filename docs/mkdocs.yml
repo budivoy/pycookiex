@@ -50,6 +50,7 @@ plugins:
       default_handler: python
       handlers:
         python:
+          paths: [..]
           options:
             docstring_style: google
             show_signature_annotations: true
