@@ -9,12 +9,14 @@
         "Apache-2.0",
         "GPL-3.0"
     ],
+    "github_user": "anonymous",
     "__prompts__": {
         "project_name": "Human-readable project name",
         "project_slug": "Python package name that will be used to INSTALL your package",
         "package_name": "Python package name that will be used to IMPORT your package",
         "description": "Description of your package",
-        "author": "Your name"
+        "author": "Your name",
+        "github_user": "GitHub User Name"
     },
     "_copy_without_render": [
         ".github/*"
