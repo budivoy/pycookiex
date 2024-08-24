@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - structuted project:
-  * license: MIT, Apache-2.0, GPL, ...
+    * license: MIT, Apache-2.0, GPL, ...
 - hooks: [pre-commit](https://pre-commit.com/)
 - testing: [pytest](https://docs.pytest.org/en/stable/), [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/index.html)
 - linting: [ruff check](https://docs.astral.sh/ruff/linter/)
@@ -18,4 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - formatting: [ruff format](https://docs.astral.sh/ruff/formatter/)
 - documentation: [mkdocs](https://www.mkdocs.org/), [mkdocs-material](https://squidfunk.github.io/mkdocs-material/), [mkdocstrings](https://mkdocstrings.github.io/)
 - ci: [GitHub Actions](https://github.com/features/actions)
-  * per each PR: checkers (linting, formatting, hooks, docs build), tests
+    * per each PR: checkers (linting, formatting, hooks, docs build), tests
