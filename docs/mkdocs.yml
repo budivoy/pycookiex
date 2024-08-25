@@ -1,4 +1,12 @@
+# Project information
 site_name: pycookiex
+site_description: Yet another Python cookiecutter 🐍 🍪
+site_author: budivoy
+site_url: https://budivoy.github.io/pycookiex/
+copyright: 'Copyright &copy; budivoy 2024-present'
+
+# Repository
+repo_name: pycookiex
 repo_url: https://github.com/budivoy/pycookiex
 
 theme:
