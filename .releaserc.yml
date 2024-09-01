@@ -1,0 +1,54 @@
+repositoryUrl: "https://github.com/budivoy/pycookiex.git"
+
+branches:
+  - devel
+
+tagFormat: "v${version}"
+
+plugins:
+# Determine release type based on commit message tags
+- - "@semantic-release/commit-analyzer"
+  - preset: conventionalcommits
+# Replace
+# - pyproject.toml: version with next release version
+# - CHANGELOG.md: Unreleased with next release version
+- - "semantic-release-replace-plugin"
+  - replacements:
+    - files:
+      - pyproject.toml
+      - CHANGELOG.md
+      from:
+        - "^version = \".*\"$"
+        - "\\[Unreleased\\]"
+      to:
+        - "version = \"${nextRelease.version}\""
+        - "[${nextRelease.version}] ${new Date().toISOString().split('T')[0]}"
+      results:
+      - file: pyproject.toml
+        hasChanged: true
+        numMatches: 1
+        numReplacements: 1
+      - file: CHANGELOG.md
+        hasChanged: true
+        numMatches: 1
+        numReplacements: 1
+      countMatches: true
+# Commit replacements
+- - "@semantic-release/git"
+  - assets:
+    - pyproject.toml
+    - CHANGELOG.md
+    message: "chore(release): ${nextRelease.version}"
+# Publish release to GitHub
+- - "@semantic-release/github"
+  - successComment: false
+    failComment: false
+    failTitle: false
+    labels: false
+
+# Extract release notes from CHANGELOG.md
+# The reason of such workaround is to simplify workflow. Release after every PR is inconvenient,
+# so this configuration assumes that release triggered manually.
+generateNotes:
+- - "@semantic-release/exec"
+  - generateNotesCmd: "awk '/^## \\[${nextRelease.version}\\]/ {flag=1; next} /^## / && flag {flag=0} flag {print}' CHANGELOG.md | sed '1{/^$/d;}'"
