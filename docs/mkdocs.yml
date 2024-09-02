@@ -51,6 +51,9 @@ extra:
     - README.md
     - LICENSE.md
     - CHANGELOG.md
+  version:
+    provider: mike
+    alias: true
 
 plugins:
   - search:
