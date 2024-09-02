@@ -35,7 +35,11 @@ jobs:
 
   publish-docs:
     runs-on: ubuntu-latest
+
     needs: release
+
+    permissions:
+        contents: write # to be able to publish GitHub pages
 
     steps:
       - uses: actions/checkout@v4
@@ -50,6 +54,11 @@ jobs:
           version="$(poetry version --short)"
           echo "Package version: $version"
           echo "PACKAGE_VERSION=$version" >> $GITHUB_ENV
+
+      - name: Setup git user
+        run: |
+          git config --global user.name budivoy
+          git config --global user.email 1615976+budivoy@users.noreply.github.com
 
       - name: Deploy documentation to GitHub Pages
         env:
