@@ -45,8 +45,14 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Get package version
+        run: |
+          version="$(poetry version --short)"
+          echo "Package version: $version"
+          echo "PACKAGE_VERSION=$version" >> $GITHUB_ENV
+
       - name: Deploy documentation to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          poetry run mkdocs build -f --strict --config-file docs/mkdocs.yml
+          poetry run mike deploy --push --ignore-remote-status --update-aliases "${{ env.PACKAGE_VERSION }}" latest --config-file docs/mkdocs.yml
