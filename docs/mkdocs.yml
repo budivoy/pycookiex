@@ -26,7 +26,7 @@ theme:
 nav:
   - Intruduction: README.md
   - Examples:
-    - Docstring Example: examples/docstring_example.md
+    - Docstring Example: examples/docstring_examples.md
   - Other:
     - License: LICENSE.md
     - Changelog: CHANGELOG.md
