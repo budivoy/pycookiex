@@ -34,6 +34,12 @@ repos:
   hooks:
     - id: actionlint
 
+# Verify changelog in the Keep-A-Chane-Log format
+- repo: https://gitlab.com/schmieder.matthias/python-kacl
+  rev: 'v0.6.1'
+  hooks:
+    - id: kacl-verify
+
 # MyPy static type checking
 - repo: local
   hooks:
