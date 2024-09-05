@@ -53,6 +53,7 @@ extra:
     - CHANGELOG.md
   version:
     provider: mike
+    default: latest
     alias: true
 
 plugins:
