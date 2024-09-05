@@ -55,7 +55,7 @@ jobs:
         run: |
           version="$(poetry version --short)"
           echo "Package version: $version"
-          echo "PACKAGE_VERSION=$version" >> $GITHUB_ENV
+          echo "PACKAGE_VERSION=$version" >> "$GITHUB_ENV"
 
       - name: Setup git user
         run: |
