@@ -94,6 +94,7 @@ def test_bake_with_defaults_p(cookies: Cookies) -> None:
     found_toplevel_files = [f.basename for f in result.project.listdir()]
     assert 'README.md' in found_toplevel_files
     assert 'pyproject.toml' in found_toplevel_files
+    assert 'Taskfile.yml' in found_toplevel_files
 
 
 def test_bake_and_install_p(cookies: Cookies) -> None:
@@ -144,3 +145,10 @@ def test_bake_and_build_docs_p(cookies: Cookies) -> None:
     assert result.project.isdir()
     assert run_inside_dir('poetry install --with dev', result.project) == 0
     assert run_inside_dir('poetry run mkdocs build --strict --config-file docs/mkdocs.yml', result.project) == 0
+
+
+def test_bake_and_run_task_listall_p(cookies: Cookies) -> None:
+  """Test cookie bake and build docs."""
+  with bake_in_temp_dir(cookies) as result:
+    assert result.project.isdir()
+    assert run_inside_dir('task --list-all', result.project) == 0
