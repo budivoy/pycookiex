@@ -17,9 +17,16 @@ runs:
         python-version: ${{ inputs.python-version }}
         cache: 'poetry' # caching poetry dependencies
 
-    - name: Install dependencies
-      run: poetry install
-      shell: bash  # Adding the shell property
+    - name: Install Python Dependencies
+      run: |
+        poetry install
+      shell: bash
+
+    - name: Intall Task
+      run: |
+        sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
+        echo "~/local/bin/" >> $GITHUB_PATH
+      shell: bash
 
 inputs:
   python-version:
