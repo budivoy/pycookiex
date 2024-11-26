@@ -8,3 +8,7 @@ tasks:
   test:
     cmds:
       - poetry run pytest
+
+  lint:
+    cmds:
+      - poetry run ruff check --config pyproject.toml

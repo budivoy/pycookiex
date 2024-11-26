@@ -17,6 +17,8 @@ Yet another Python cookiecutter 🐍 🍪
 - documentation: [mkdocs](https://www.mkdocs.org/), [mkdocs-material](https://squidfunk.github.io/mkdocs-material/), [mkdocstrings](https://mkdocstrings.github.io/)
 - ci: [GitHub Actions](https://github.com/features/actions)
     * per each PR: checkers (linting, formatting, hooks, docs build), tests
+- misc:
+    * automation: [task](https://taskfile.dev/)
 
 ## 🚀 Getting Started
 ### 📋 Prerequisites
