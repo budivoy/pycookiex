@@ -10,13 +10,15 @@
         "GPL-3.0"
     ],
     "github_user": "anonymous",
+    "github_repo": "{{ cookiecutter.project_slug }}",
     "__prompts__": {
         "project_name": "Human-readable project name",
         "project_slug": "Python package name that will be used to INSTALL your package",
         "package_name": "Python package name that will be used to IMPORT your package",
         "description": "Description of your package",
         "author": "Your name",
-        "github_user": "GitHub User Name"
+        "github_user": "GitHub user name",
+        "github_repo": "GitHub repository name"
     },
     "_copy_without_render": [
         ".github/*"
