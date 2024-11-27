@@ -19,6 +19,7 @@ Yet another Python cookiecutter 🐍 🍪
     * per each PR: checkers (linting, formatting, hooks, docs build), tests
 - misc:
     * automation: [task](https://taskfile.dev/)
+    * changelog: [kacl](https://keepachangelog.com/en/1.0.0/)
 
 ## 🚀 Getting Started
 ### 📋 Prerequisites

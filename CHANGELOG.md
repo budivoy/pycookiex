@@ -21,5 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     * per each PR: checkers (linting, formatting, hooks, docs build), tests
 - misc:
     * automation: [task](https://taskfile.dev/)
+    * changelog: [kacl](https://keepachangelog.com/en/1.0.0/)
 
 [Unreleased]: https://github.com/budivoy/pycookiex/compare/v1.0.0...HEAD
