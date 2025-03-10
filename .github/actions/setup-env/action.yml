@@ -13,6 +13,7 @@ runs:
     - name: Set up Python
       run: |
         uv python install ${{ inputs.python-version }}
+      shell: bash
 
     - name: Install Python Dependencies
       run: |
