@@ -10,6 +10,13 @@ runs:
         enable-cache: true
         cache-dependency-glob: "uv.lock"
 
+    - name: Install Poetry (Temporary)
+      uses: snok/install-poetry@v1
+      with:
+        version: 1.8.3
+        virtualenvs-create: true
+        virtualenvs-in-project: false
+
     - name: Set up Python
       run: |
         uv python install ${{ inputs.python-version }}
