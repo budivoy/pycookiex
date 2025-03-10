@@ -3,27 +3,27 @@ version: '3'
 tasks:
   install:
     cmds:
-      - poetry install
+      - uv install
 
   test:
     cmds:
-      - poetry run pytest
+      - uv run pytest
 
   lint:
     cmds:
-      - poetry run ruff check --config pyproject.toml
+      - uv run ruff check --config pyproject.toml
 
   format:
     cmds:
-      - poetry run ruff format --config pyproject.toml
+      - uv run ruff format --config pyproject.toml
 
   checker:
     cmds:
-      - poetry run mypy . --config pyproject.toml
+      - uv run mypy . --config pyproject.toml
 
   docs:
     cmds:
-      - poetry run mkdocs build --strict --config-file docs/mkdocs.yml
+      - uv run mkdocs build --strict --config-file docs/mkdocs.yml
 
   clean-docs:
     cmds:
