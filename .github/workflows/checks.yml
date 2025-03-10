@@ -26,11 +26,11 @@ jobs:
 
       - name: Run ruff
         run: |
-          poetry run ruff check
+          uv run ruff check
 
       - name: Run mypy
         run: |
-          poetry run mypy . --config pyproject.toml
+          uv run mypy . --config pyproject.toml
 
   formatters:
     strategy:
@@ -51,7 +51,7 @@ jobs:
 
       - name: Run format
         run: |
-          poetry run ruff format
+          uv run ruff format
 
   pre-commit:
     strategy:
@@ -76,7 +76,7 @@ jobs:
 
       - name: Run pre-commit
         run: |
-          poetry run pre-commit run -a
+          uv run pre-commit run -a
 
   docs-build:
     strategy:
@@ -97,4 +97,4 @@ jobs:
 
       - name: Build docs
         run: |
-          poetry run mkdocs build -f --strict --config-file docs/mkdocs.yml
+          uv run mkdocs build -f --strict --config-file docs/mkdocs.yml
