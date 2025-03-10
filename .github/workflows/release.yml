@@ -53,7 +53,7 @@ jobs:
 
       - name: Get package version
         run: |
-          version="$(poetry version --short)"
+          version="$(grep -E '^version =' pyproject.toml | cut -d '"' -f2)"
           echo "Package version: $version"
           echo "PACKAGE_VERSION=$version" >> "$GITHUB_ENV"
 
@@ -66,5 +66,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          poetry run mike set-default --allow-undefined latest --config-file docs/mkdocs.yml
-          poetry run mike deploy --push --update-aliases "${{ env.PACKAGE_VERSION }}" latest --config-file docs/mkdocs.yml
+          uv run mike set-default --allow-undefined latest --config-file docs/mkdocs.yml
+          uv run mike deploy --push --update-aliases "${{ env.PACKAGE_VERSION }}" latest --config-file docs/mkdocs.yml

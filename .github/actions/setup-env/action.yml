@@ -1,25 +1,21 @@
 name: 🛠️ Setup Environment
-description: A composite action to set up Python with Poetry and install dependencies.
+description: A composite action to set up Python with uv and install dependencies.
 runs:
   using: "composite"
   steps:
 
-    - name: Install Poetry
-      uses: snok/install-poetry@v1
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
       with:
-        version: 1.8.3
-        virtualenvs-create: true
-        virtualenvs-in-project: false
+        enable-cache: true
 
     - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ inputs.python-version }}
-        cache: 'poetry' # caching poetry dependencies
+      run: |
+        uv python install ${{ inputs.python-version }}
 
     - name: Install Python Dependencies
       run: |
-        poetry install
+        uv lock
       shell: bash
 
     - name: Intall Task
