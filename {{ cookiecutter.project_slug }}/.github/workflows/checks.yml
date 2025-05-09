@@ -8,6 +8,9 @@ on:
 
 jobs:
   linters:
+    permissions:
+      contents: read
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -26,13 +29,16 @@ jobs:
 
       - name: Run ruff
         run: |
-          poetry run ruff check
+          task lint
 
       - name: Run mypy
         run: |
-          poetry run mypy . --config pyproject.toml
+          task checker
 
   formatters:
+    permissions:
+      contents: read
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -51,9 +57,12 @@ jobs:
 
       - name: Run format
         run: |
-          poetry run ruff format
+          task format
 
   pre-commit:
+    permissions:
+      contents: read
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -72,13 +81,16 @@ jobs:
 
       - name: Install pre-commit
         run: |
-          pip install pre-commit
+          uv pip install pre-commit
 
       - name: Run pre-commit
         run: |
-          poetry run pre-commit run -a
+          uv run pre-commit run -a
 
   docs-build:
+    permissions:
+      contents: read
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -97,4 +109,4 @@ jobs:
 
       - name: Build docs
         run: |
-          poetry run mkdocs build -f --strict --config-file docs/mkdocs.yml
+          task docs

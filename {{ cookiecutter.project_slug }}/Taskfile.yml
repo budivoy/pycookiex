@@ -3,12 +3,39 @@ version: '3'
 tasks:
   install:
     cmds:
-      - poetry install
+      - uv sync
 
   test:
     cmds:
-      - poetry run pytest
+      - uv run pytest
 
   lint:
     cmds:
-      - poetry run ruff check --config pyproject.toml
+      - uv run ruff check --config pyproject.toml
+
+  format:
+    cmds:
+      - uv run ruff format --config pyproject.toml
+
+  checker:
+    cmds:
+      - uv run mypy . --config pyproject.toml
+
+  docs:
+    cmds:
+      - uv run mkdocs build --strict --config-file docs/mkdocs.yml
+
+  clean-lint:
+    cmds:
+      - rm -rf .ruff_cache
+
+  clean-checker:
+    cmds:
+      - rm -rf .mypy_cache
+
+  clean-docs:
+    cmds:
+      - rm -rf docs/site
+
+  clean:
+    deps: [clean-lint, clean-checker, clean-docs]
