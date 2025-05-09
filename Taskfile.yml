@@ -25,10 +25,17 @@ tasks:
     cmds:
       - uv run mkdocs build --strict --config-file docs/mkdocs.yml
 
+  clean-lint:
+    cmds:
+      - rm -rf .ruff_cache
+
+  clean-checker:
+    cmds:
+      - rm -rf .mypy_cache
+
   clean-docs:
     cmds:
       - rm -rf docs/site
 
   clean:
-    cmds:
-      - clean-docs
+    deps: [clean-lint, clean-checker, clean-docs]

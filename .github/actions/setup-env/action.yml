@@ -9,28 +9,17 @@ runs:
       with:
         enable-cache: true
         cache-dependency-glob: "uv.lock"
-
-    - name: Install Poetry (Temporary)
-      uses: snok/install-poetry@v1
-      with:
-        version: 1.8.3
-        virtualenvs-create: true
-        virtualenvs-in-project: false
-
-    - name: Set up Python
-      run: |
-        uv python install ${{ inputs.python-version }}
-      shell: bash
-
-    - name: Install Python Dependencies
-      run: |
-        uv lock
-      shell: bash
+        python-version: ${{ inputs.python-version }}
 
     - name: Intall Task
       run: |
         sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
         echo "~/local/bin/" >> $GITHUB_PATH
+      shell: bash
+
+    - name: Install Dependencies
+      run: |
+        task install
       shell: bash
 
 inputs:
