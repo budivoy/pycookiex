@@ -7,6 +7,7 @@
 Yet another Python cookiecutter 🐍 🍪
 
 ## 🎯 Features
+- packaging & deps management: [uv](https://docs.astral.sh/uv)
 - structured project:
     * license: MIT, Apache-2.0, GPL, ...
 - hooks: [pre-commit](https://pre-commit.com/)
