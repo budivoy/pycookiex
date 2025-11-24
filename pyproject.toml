@@ -5,7 +5,7 @@ description = "Yet another Python cookiecutter"
 readme = "README.md"
 authors = [{ name = "budivoy" }]
 license = { text = "MIT" }
-requires-python = "<4.0,>=3.12"
+requires-python = "<4.0,>=3.13"
 dependencies = [
     "pytest<9.0.0,>=8.3.2",
     "pytest-cookies<1.0.0,>=0.7.0",
@@ -26,7 +26,7 @@ default-groups = []
 testpaths = ['tests/'] # Specify the directories to look for tests
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 indent-width = 2
 line-length = 119
 exclude = ["*cookiecutter*"]
@@ -54,7 +54,7 @@ inline-quotes = "single"
 quote-style = "single"
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 plugins = []
 exclude = ["{{ cookiecutter.project_slug }}"]
 

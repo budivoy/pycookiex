@@ -5,7 +5,7 @@ description = "{{ cookiecutter.description }}"
 readme = "README.md"
 authors = [{ name = "{{ cookiecutter.author }}" }]
 license = { text = "{{ cookiecutter.license }}" }
-requires-python = "<4.0,>=3.12"
+requires-python = "<4.0,>=3.13"
 dependencies = [
     "toml<0.11,>=0.10.2",
 ]
@@ -29,7 +29,7 @@ testpaths = ["tests/"]
 addopts = "--cov={{ cookiecutter.package_name}} --cov-branch --cov-report=term-missing"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 indent-width = 2
 line-length = 119
 
@@ -56,7 +56,7 @@ inline-quotes = "single"
 quote-style = "single"
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 plugins = []
 
 # Enforce strict type checking

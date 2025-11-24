@@ -17,7 +17,7 @@ from pytest_cookies.plugin import Cookies  # Importing Cookies type for annotati
 
 
 @contextmanager
-def exec_inside_dir(dirpath: Path) -> Generator[None, None, None]:
+def exec_inside_dir(dirpath: Path) -> Generator[None]:
   """Execute code from inside the given directory.
 
   Args:
@@ -33,9 +33,7 @@ def exec_inside_dir(dirpath: Path) -> Generator[None, None, None]:
 
 
 @contextmanager
-def bake_in_temp_dir(
-  cookies: Cookies, *args: Sequence[str], **kwargs: Mapping[str, str | None]
-) -> Generator[Any, None, None]:
+def bake_in_temp_dir(cookies: Cookies, *args: Sequence[str], **kwargs: Mapping[str, str | None]) -> Generator[Any]:
   """Delete the temporal directory that is created when executing the tests.
 
   Args:

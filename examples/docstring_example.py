@@ -116,7 +116,7 @@ class ExampleClass:
     return f'Hello, my name is {self.name} and I am {self.age} years old.'
 
 
-def example_generator(n: int) -> Generator[int, None, None]:
+def example_generator(n: int) -> Generator[int]:
   """A generator function that yields numbers from 0 to n-1.
 
   Args:

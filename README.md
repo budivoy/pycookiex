@@ -24,7 +24,7 @@ Yet another Python cookiecutter 🐍 🍪
 
 ## 🚀 Getting Started
 ### 📋 Prerequisites
-- Python 3.12+
+- Python 3.13+
 - [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) for baking project
 
 ### 🏃 Usage
