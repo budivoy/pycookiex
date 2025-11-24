@@ -2,7 +2,7 @@ default_stages: [pre-commit, pre-push, commit-msg]
 fail_fast: false
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.6.0
+  rev: v6.0.0
   hooks:
   - id: end-of-file-fixer
   - id: trailing-whitespace
@@ -13,13 +13,13 @@ repos:
 
 # Check commit message
 - repo: https://github.com/commitizen-tools/commitizen
-  rev: v3.29.0
+  rev: v4.10.0
   hooks:
     - id: commitizen
 
 # Lint Python code
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.6.1
+  rev: v0.14.6
   hooks:
     # Run the linter.
     - id: ruff
@@ -30,13 +30,13 @@ repos:
 
 # Lint GitHub Actions
 - repo: https://github.com/rhysd/actionlint
-  rev: v1.7.1
+  rev: v1.7.9
   hooks:
     - id: actionlint
 
 # Verify changelog in the Keep-A-Chane-Log format
 - repo: https://gitlab.com/schmieder.matthias/python-kacl
-  rev: 'v0.6.1'
+  rev: 'v0.6.8'
   hooks:
     - id: kacl-verify
 
