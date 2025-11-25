@@ -16,7 +16,9 @@ dev = [
     "pytest<9.0.0,>=8.3.2",
     "pytest-cov<6.0.0,>=5.0.0",
     "ruff<1.0.0,>=0.6.1",
+{%- if cookiecutter.include_mypy == "yes" %}
     "mypy<2.0.0,>=1.11.1",
+{%- endif %}
     "types-toml<0.11.0,>=0.10.8",
     "mkdocs<2.0.0,>=1.6.0",
     "mkdocs-material<10.0.0,>=9.5.31",
@@ -55,6 +57,7 @@ inline-quotes = "single"
 # Prefer single quotes over double quotes.
 quote-style = "single"
 
+{%- if cookiecutter.include_mypy == "yes" %}
 [tool.mypy]
 python_version = "3.13"
 plugins = []
@@ -78,3 +81,4 @@ warn_unreachable = true
 
 # Handle third-party libraries
 ignore_missing_imports = true
+{%- endif %}

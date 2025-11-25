@@ -40,6 +40,7 @@ repos:
   hooks:
     - id: kacl-verify
 
+{%- if cookiecutter.include_mypy == "yes" %}
 # MyPy static type checking
 - repo: local
   hooks:
@@ -50,3 +51,4 @@ repos:
       pass_filenames: false
       language: system
       types: [ python ]
+{%- endif %}
