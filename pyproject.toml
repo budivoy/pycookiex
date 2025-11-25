@@ -28,7 +28,7 @@ testpaths = ['tests/'] # Specify the directories to look for tests
 
 [tool.ruff]
 target-version = "py313"
-indent-width = 2
+indent-width = 4
 line-length = 119
 exclude = ["*cookiecutter*"]
 
