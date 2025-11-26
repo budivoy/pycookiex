@@ -1,0 +1,42 @@
+name: 🏺 Publish artifacts
+
+# Trigger only when a release is published
+on:
+  release:
+    types: [published]
+
+
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+
+    permissions:
+        contents: write # to be able to publish GitHub pages
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # fetch all branches and commits according to mike docs
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-env
+        with:
+          python-version: '3.13'
+
+      - name: Get package version from release tag
+        run: |
+          # Extract version from the tag name (remove leading "v")
+          version="${GITHUB_REF#refs/tags/v}"
+          echo "PACKAGE_VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Setup git user
+        run: |
+          git config --global user.name budivoy
+          git config --global user.email 1615976+budivoy@users.noreply.github.com
+
+      - name: Deploy documentation to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          uv run mike set-default --allow-undefined latest --config-file docs/mkdocs.yml
+          uv run mike deploy --push --update-aliases "${{ env.PACKAGE_VERSION }}" latest --config-file docs/mkdocs.yml
