@@ -39,6 +39,11 @@ extra:
   md_file_to_update_links:
     - README.md
     - LICENSE.md
+  version:
+    provider: mike
+    default: latest
+    alias: true
+
 
 plugins:
   - search:
