@@ -63,7 +63,7 @@ plugins:
       handlers:
         python:
           paths: [..]
-          import:
+          inventories:
             - https://docs.python.org/3/objects.inv
           options:
             # For more options see: https://mkdocstrings.github.io/python/usage/
