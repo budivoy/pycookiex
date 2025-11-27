@@ -1,6 +1,6 @@
 [project]
 name = "pycookiex"
-version = "0.1.0"
+version = "0.2.0"
 description = "Yet another Python cookiecutter"
 readme = "README.md"
 authors = [{ name = "budivoy" }]
