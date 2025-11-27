@@ -39,4 +39,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           uv run mike set-default --allow-undefined latest --config-file docs/mkdocs.yml
-          uv run mike deploy --push --update-aliases "${{ env.PACKAGE_VERSION }}" latest --config-file docs/mkdocs.yml
+          uv run mike deploy --push --update-aliases latest "${{ env.PACKAGE_VERSION }}" --config-file docs/mkdocs.yml
