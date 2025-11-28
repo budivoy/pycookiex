@@ -9,7 +9,7 @@ runs:
       with:
         enable-cache: true
         cache-dependency-glob: "uv.lock"
-        python-version: ${{ inputs.python-version }}
+        python-version: {{ '${{ inputs.python-version }}' }}
 
     - name: Intall Task
       run: |

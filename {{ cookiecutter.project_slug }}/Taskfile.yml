@@ -16,10 +16,12 @@ tasks:
   format:
     cmds:
       - uv run ruff format --config pyproject.toml
+{%- if cookiecutter.include_mypy == "yes" %}
 
   checker:
     cmds:
       - uv run mypy . --config pyproject.toml
+{%- endif %}
 
   docs:
     cmds:
@@ -28,10 +30,12 @@ tasks:
   clean-lint:
     cmds:
       - rm -rf .ruff_cache
+{%- if cookiecutter.include_mypy == "yes" %}
 
   clean-checker:
     cmds:
       - rm -rf .mypy_cache
+{%- endif %}
 
   clean-docs:
     cmds:

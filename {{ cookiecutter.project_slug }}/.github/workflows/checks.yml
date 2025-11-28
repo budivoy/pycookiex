@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ['3.13']
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ '${{ matrix.os }}' }}
 
     steps:
 
@@ -25,15 +25,17 @@ jobs:
       - name: Setup Environment
         uses: ./.github/actions/setup-env
         with:
-          python-version: ${{ matrix.python-version}}
+          python-version: {{ '${{ matrix.python-version}}' }}
 
       - name: Run ruff
         run: |
           task lint
+{%- if cookiecutter.include_mypy == "yes" %}
 
       - name: Run mypy
         run: |
           task checker
+{%- endif %}
 
   formatters:
     permissions:
@@ -44,7 +46,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ['3.13']
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ '${{ matrix.os }}' }}
 
     steps:
 
@@ -53,7 +55,7 @@ jobs:
       - name: Setup Environment
         uses: ./.github/actions/setup-env
         with:
-          python-version: ${{ matrix.python-version}}
+          python-version: {{ '${{ matrix.python-version}}' }}
 
       - name: Run format
         run: |
@@ -68,7 +70,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ['3.13']
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ '${{ matrix.os }}' }}
 
     steps:
 
@@ -77,7 +79,7 @@ jobs:
       - name: Setup Environment
         uses: ./.github/actions/setup-env
         with:
-          python-version: ${{ matrix.python-version}}
+          python-version: {{ '${{ matrix.python-version}}' }}
 
       - name: Install pre-commit
         run: |
@@ -96,7 +98,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ['3.13']
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {{ '${{ matrix.os }}' }}
 
     steps:
 
@@ -105,7 +107,7 @@ jobs:
       - name: Setup Environment
         uses: ./.github/actions/setup-env
         with:
-          python-version: ${{ matrix.python-version}}
+          python-version: {{ '${{ matrix.python-version}}' }}
 
       - name: Build docs
         run: |

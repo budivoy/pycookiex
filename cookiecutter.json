@@ -21,8 +21,5 @@
         "include_mypy": "Include mypy for type checking",
         "github_user": "GitHub user name",
         "github_repo": "GitHub repository name"
-    },
-    "_copy_without_render": [
-        ".github/*"
-    ]
+    }
 }
