@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Moved to https://codeberg.org/budivoy/pycookiex
+
 [![🤗 Pre-Flight Checks](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/checks.yml)
 [![✅ Tests](https://github.com/budivoy/pycookiex/actions/workflows/test.yml/badge.svg)](https://github.com/budivoy/pycookiex/actions/workflows/test.yml)
 [![Changelog](https://img.shields.io/badge/changelog-available-orange.svg)](./CHANGELOG.md)
