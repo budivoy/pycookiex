@@ -1,0 +1,51 @@
+name: 🧪 Generate Test Package
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-and-commit:
+    strategy:
+        matrix:
+          os: [ubuntu-latest]
+          python-version: ['3.12']
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      TEST_REPO: "git@github.com:budivoy/pycookiex-test.git"
+      BRANCH: "devel"
+      PROJECT_DIR: "pycookiex-test"
+
+    steps:
+    - name: Checkout current repository
+      uses: actions/checkout@v3
+
+    - name: Setup Environment
+      uses: ./.github/actions/setup-env
+      with:
+        python-version: ${{ matrix.python-version}}
+
+    - name: Clone test repository
+      run: |
+        git clone --branch "$BRANCH" "$TEST_REPO" "$PROJECT_DIR"
+
+    - name: Clear test repository
+      run: |
+        cd "$PROJECT_DIR"
+        rm -rf -- * .[!.]*
+
+    - name: Generate project using cookiecutter
+      run: |
+        cookiecutter --no-input --output-dir="$PROJECT_DIR" "$(pwd)"
+
+    - name: Commit and push changes to test repository
+      run: |
+        cd "$PROJECT_DIR"
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "Generate project from cookiecutter"
+        git push origin "$BRANCH"
+      env:
+        GITHUB_TOKEN: ${{ secrets.TEST_REPO_TOKEN }}
